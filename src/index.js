@@ -1,25 +1,23 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
 import React from 'react';
-import {View, Text} from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
+
+const styles = StyleSheet.create({
+  viewStyle: {
+    backgroundColor: '#7159c1',
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  textStyle: {
+    color: '#FFF',
+    fontSize: 22,
+  },
+});
 
 function App() {
   return (
-    <View style={{backgroundColor: '#7159c1'}}>
-      <Text
-        style={{
-          textAlign: 'center',
-          alignContent: 'center',
-          color: '#FFF',
-        }}>
-        App Rocketshoes - Challenge #7
-      </Text>
+    <View style={styles.viewStyle}>
+      <Text style={styles.textStyle}>App Rocketshoes - Challenge #7</Text>
     </View>
   );
 }
