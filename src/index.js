@@ -1,5 +1,7 @@
+import 'react-native-gesture-handler';
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
 
 const styles = StyleSheet.create({
   viewStyle: {
@@ -16,9 +18,11 @@ const styles = StyleSheet.create({
 
 function App() {
   return (
-    <View style={styles.viewStyle}>
-      <Text style={styles.textStyle}>App Rocketshoes - Challenge #7</Text>
-    </View>
+    <NavigationContainer>
+      <View style={styles.viewStyle}>
+        <Text style={styles.textStyle}>App Rocketshoes - Challenge #7</Text>
+      </View>
+    </NavigationContainer>
   );
 }
 
