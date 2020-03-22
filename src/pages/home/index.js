@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Text, View } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import {
@@ -7,12 +7,16 @@ import {
   List,
   Product,
   ProductList,
-  Imagem,
-  ButtonArea,
+  Image,
+  AreaButton,
+  AreaPhoto,
+  AreaPriceTitle,
   ButtonAddCart,
   ButtonAddCartText,
-  Titulo,
-  Preco,
+  IconArea,
+  Quantity,
+  Title,
+  Price,
 } from './styles';
 
 const DATA = [
@@ -39,28 +43,34 @@ const DATA = [
   },
 ];
 
-export default function home({ navigation }) {
+export default function home() {
   return (
     <Container>
       <List>
         <ProductList>
           {DATA.map(product => (
             <Product key={product.id}>
-              <Imagem source={{ uri: product.image }} />
-              <Titulo>{product.title}</Titulo>
-              <Preco>{product.price}</Preco>
-              <ButtonArea>
-                <Icon name="add-shopping-cart" size={20} color="#FFF" />
-                <Text>3</Text>
+              <AreaPhoto>
+                <Image source={{ uri: product.image }} />
+              </AreaPhoto>
+              <AreaPriceTitle>
+                <Title>{product.title}</Title>
+                <Price>{product.price}</Price>
+              </AreaPriceTitle>
+              <AreaButton>
+                <IconArea>
+                  <Icon name="add-shopping-cart" size={20} color="#FFF" />
+                  <Quantity>3</Quantity>
+                </IconArea>
                 <ButtonAddCart onPress={() => {}}>
                   <ButtonAddCartText>Adicionar ao carrinho</ButtonAddCartText>
                 </ButtonAddCart>
-              </ButtonArea>
+              </AreaButton>
             </Product>
           ))}
         </ProductList>
       </List>
-      <Text onPress={() => navigation.navigate('Cart')}>Home</Text>
+      {/* <Text onPress={() => navigation.navigate('Cart')}>Home</Text> */}
     </Container>
   );
 }

@@ -3,13 +3,11 @@ import { RectButton } from 'react-native-gesture-handler';
 
 export const Container = styled.View`
   flex: 1;
-  margin-top: 30px;
 `;
 
 export const List = styled.View`
   flex: 1;
   background: #000;
-  align-items: center;
 `;
 
 export const ProductList = styled.ScrollView.attrs({
@@ -20,7 +18,6 @@ export const ProductList = styled.ScrollView.attrs({
 `;
 
 export const Product = styled.View`
-  flex: 1;
   background: #fff;
   margin: 10px;
   padding: 10px 20px;
@@ -28,34 +25,59 @@ export const Product = styled.View`
   border-radius: 5px;
 `;
 
-export const Titulo = styled.Text.attrs({
-  numberOfLines: 2,
-})`
-  font-size: 16px;
-  margin-bottom: auto;
+export const AreaPriceTitle = styled.View`
+  margin: 10px 0 10px;
 `;
 
-export const Preco = styled.Text`
+export const Title = styled.Text.attrs({
+  numberOfLines: 2,
+})`
+  font-size: 15px;
+  text-align: justify;
+  margin-left: 10px;
+  margin-top: 5px;
+  line-height: 20px;
+`;
+
+export const Price = styled.Text`
   font-size: 20px;
   margin-left: 10px;
   font-weight: 700;
 `;
 
-export const Imagem = styled.Image`
+export const AreaPhoto = styled.View`
+  flex: 1;
+`;
+
+export const Image = styled.Image`
   width: 250px;
   height: 250px;
   align-self: center;
 `;
 
-export const ButtonArea = styled.View`
+export const AreaButton = styled.View`
   flex: 1;
   flex-direction: row;
-  align-content: space-between;
-  align-items: center;
+  align-items: baseline;
+  justify-content: space-between;
   background: #7159c1;
   border-radius: 4px;
-  padding: 10px;
-  margin-top: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  max-height: 50px;
+`;
+
+export const IconArea = styled.View`
+  flex: 1;
+  flex-direction: row;
+  align-items: baseline;
+  align-content: center;
+`;
+
+export const Quantity = styled.Text`
+  margin-left: 5px;
+  color: #fff;
+  font-weight: bold;
 `;
 
 export const ButtonAddCart = styled(RectButton)``;
