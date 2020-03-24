@@ -21,12 +21,12 @@ export default function Routes() {
       <Stack.Screen
         name="Home"
         component={Home}
-        options={{ title: 'RocketShoes - Home' }}
+        options={{ headerShown: false }}
       />
       <Stack.Screen
         name="Cart"
         component={Cart}
-        options={{ title: 'RocketShoes - Cart' }}
+        options={{ headerShown: false }}
       />
     </Stack.Navigator>
   );
