@@ -42,7 +42,7 @@ const DATA = [
   },
 ];
 
-export default function home() {
+export default function home({ navigation }) {
   return (
     <Container>
       <List>
@@ -61,7 +61,7 @@ export default function home() {
                   <Icon name="add-shopping-cart" size={20} color="#FFF" />
                   <Quantity>3</Quantity>
                 </IconArea>
-                <ButtonAddCart onPress={() => {}}>
+                <ButtonAddCart onPress={() => navigation.navigate('Cart')}>
                   <ButtonAddCartText>Adicionar ao carrinho</ButtonAddCartText>
                 </ButtonAddCart>
               </AreaButton>
