@@ -15,18 +15,20 @@ export const ProductList = styled.ScrollView.attrs({
   showsHorizontalScrollIndicator: false,
 })`
   margin-top: 20px;
+  flex: 0.8;
 `;
 
 export const Product = styled.View`
   background: #fff;
   margin: 10px;
   padding: 10px 20px;
-  max-width: 300px;
+  width: 280px;
   border-radius: 5px;
 `;
 
 export const AreaPriceTitle = styled.View`
-  margin: 10px 0 10px;
+  margin-bottom: 20px;
+  margin-top: 20px;
 `;
 
 export const Title = styled.Text.attrs({
@@ -50,8 +52,8 @@ export const AreaPhoto = styled.View`
 `;
 
 export const Image = styled.Image`
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   align-self: center;
 `;
 
@@ -64,7 +66,7 @@ export const AreaButton = styled.View`
   border-radius: 4px;
   padding-left: 10px;
   padding-right: 10px;
-  max-height: 50px;
+  max-height: 40px;
 `;
 
 export const IconArea = styled.View`
