@@ -26,6 +26,8 @@ export const QuantityCart = styled.Text`
   padding-left: 8px;
   padding-top: 2px;
   border-radius: 12px;
+  top: -15px;
+  left: -15px;
 `;
 
 export const IconCart = styled(Icon).attrs({
