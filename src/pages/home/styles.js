@@ -1,5 +1,6 @@
 import styled from 'styled-components/native';
 import { RectButton } from 'react-native-gesture-handler';
+import { darken } from 'polished';
 
 export const Container = styled.View`
   flex: 1;
@@ -63,8 +64,7 @@ export const AreaButton = styled.View`
   align-items: baseline;
   justify-content: space-between;
   background: #7159c1;
-  border-radius: 4px;
-  padding-left: 10px;
+  border-radius: 5px;
   padding-right: 10px;
   max-height: 40px;
 `;
@@ -72,21 +72,25 @@ export const AreaButton = styled.View`
 export const IconArea = styled.View`
   flex: 1;
   flex-direction: row;
-  align-items: baseline;
-  align-content: center;
+  align-self: stretch;
+  background: ${darken(0.03, '#7159c1')};
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
 `;
 
 export const Quantity = styled.Text`
   margin-left: 5px;
   color: #fff;
-  font-weight: bold;
+  font-weight: 600;
 `;
 
 export const ButtonAddCart = styled(RectButton)``;
 
 export const ButtonAddCartText = styled.Text`
   font-size: 14px;
-  font-weight: bold;
+  font-weight: 600;
   color: #fff;
   text-transform: uppercase;
+  padding: 10px;
 `;
