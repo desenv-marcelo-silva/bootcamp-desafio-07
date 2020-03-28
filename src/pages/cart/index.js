@@ -32,7 +32,15 @@ import {
 
 import * as CartActions from '../../store/modules/cart/actions';
 
-function Cart({ cart, removeFromCart }) {
+function Cart({ cart, removeFromCart, updateQuantity }) {
+  function increment(product) {
+    updateQuantity(product.id, product.amount + 1);
+  }
+
+  function decrement(product) {
+    updateQuantity(product.id, product.amount - 1);
+  }
+
   return (
     <Container>
       <CartProduct>
@@ -53,11 +61,11 @@ function Cart({ cart, removeFromCart }) {
               </ProductInfo>
               <TotalItemArea>
                 <TotalItemQuantityArea>
-                  <ButtonMinus onPress={() => {}}>
+                  <ButtonMinus onPress={() => decrement(item)}>
                     <IconMinus />
                   </ButtonMinus>
                   <TotalItemQuantity>{item.amount}</TotalItemQuantity>
-                  <ButtonPlus onPress={() => {}}>
+                  <ButtonPlus onPress={() => increment(item)}>
                     <IconPlus />
                   </ButtonPlus>
                 </TotalItemQuantityArea>
