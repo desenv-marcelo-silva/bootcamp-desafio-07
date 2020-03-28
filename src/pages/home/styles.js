@@ -16,7 +16,7 @@ export const ProductList = styled.ScrollView.attrs({
   showsHorizontalScrollIndicator: false,
 })`
   margin-top: 20px;
-  flex: 0.8;
+  flex: 0.9;
 `;
 
 export const Product = styled.View`
@@ -38,7 +38,6 @@ export const Title = styled.Text.attrs({
   font-size: 15px;
   text-align: justify;
   margin-left: 10px;
-  margin-top: 5px;
   line-height: 20px;
 `;
 
@@ -56,6 +55,7 @@ export const Image = styled.Image`
   width: 200px;
   height: 200px;
   align-self: center;
+  margin-top: 10px;
 `;
 
 export const AreaButton = styled.View`
