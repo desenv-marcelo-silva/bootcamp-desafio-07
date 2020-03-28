@@ -34,13 +34,13 @@ import {
 
 import * as CartActions from '../../store/modules/cart/actions';
 
-function Cart({ cart, total, removeFromCart, updateQuantity }) {
+function Cart({ cart, total, removeFromCart, updateQuantityRequest }) {
   function increment(product) {
-    updateQuantity(product.id, product.amount + 1);
+    updateQuantityRequest(product.id, product.amount + 1);
   }
 
   function decrement(product) {
-    updateQuantity(product.id, product.amount - 1);
+    updateQuantityRequest(product.id, product.amount - 1);
   }
 
   return (
