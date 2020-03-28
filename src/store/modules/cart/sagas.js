@@ -1,4 +1,5 @@
 import { call, select, put, all, takeLatest } from 'redux-saga/effects';
+import { Alert } from 'react-native';
 
 import api from '../../../services/api';
 import { formatPrice } from '../../../util/format';
@@ -18,7 +19,7 @@ function* addToCart({ id }) {
   const amount = currentAmount + 1;
 
   if (amount > stockAmount) {
-    alert('Quantida insuficiente em estoque.');
+    Alert.alert('Estoque', 'Quantidade insuficiente em estoque.');
     return;
   }
 
@@ -43,7 +44,7 @@ function* updateQuantity({ id, amount }) {
   const stockAmount = stock.data.amount;
 
   if (amount > stockAmount) {
-    alert('Quantida insuficiente em estoque.');
+    Alert.alert('Estoque', 'Quantidade insuficiente em estoque.');
     return;
   }
   yield put(updateQuantitySuccess(id, amount));
