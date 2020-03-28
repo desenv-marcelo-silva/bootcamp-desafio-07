@@ -55,7 +55,7 @@ function Cart({ cart, total, removeFromCart, updateQuantity }) {
                 <ProductImage source={{ uri: item.image }} />
                 <ProductArea>
                   <ProductTitle>{item.title}</ProductTitle>
-                  <ProductValue>{item.price}</ProductValue>
+                  <ProductValue>{item.priceFormatted}</ProductValue>
                 </ProductArea>
                 <ButtonDelete onPress={() => removeFromCart(item.id)}>
                   <IconDelete />
