@@ -6,7 +6,7 @@ export const Container = styled.View`
   background: #000;
 `;
 
-export const Cart = styled.View`
+export const CartProduct = styled.View`
   flex: 1;
   background: #fff;
   border-radius: 6px;

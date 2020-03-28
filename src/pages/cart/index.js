@@ -1,8 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import {
   Container,
-  Cart,
+  CartProduct,
   ButtonArea,
   TotalCartArea,
   TotalCartText,
@@ -21,57 +22,24 @@ import {
   TotalItem,
 } from './styles';
 
-const cartContent = [
-  {
-    id: 1,
-    title: 'Tênis de Caminhada Leve Confortável',
-    price: 179.9,
-    image:
-      'https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis1.jpg',
-  },
-  {
-    id: 2,
-    title: 'Tênis de Caminhada Leve Confortável',
-    price: 179.9,
-    image:
-      'https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis1.jpg',
-  },
-  {
-    id: 3,
-    title: 'Tênis de Caminhada Leve Confortável',
-    price: 179.9,
-    image:
-      'https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis1.jpg',
-  },
-  {
-    id: 4,
-    title: 'Tênis de Caminhada Leve Confortável',
-    price: 179.9,
-    image:
-      'https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis1.jpg',
-  },
-];
-
-export default function cart({ navigation }) {
+function Cart({ cart }) {
   return (
     <Container>
-      <Cart>
+      <CartProduct>
         <ItemArea
-          data={cartContent}
+          data={cart}
           keyExtractor={item => String(item.id)}
           renderItem={({ item }) => (
             <Item>
               <ProductInfo>
                 <ProductImage source={{ uri: item.image }} />
                 <ProductArea>
-                  <ProductTitle>
-                    Tênis de caminhada leve confortável
-                  </ProductTitle>
-                  <ProductValue>R$ 179,99</ProductValue>
+                  <ProductTitle>{item.title}</ProductTitle>
+                  <ProductValue>{item.price}</ProductValue>
                 </ProductArea>
               </ProductInfo>
               <TotalItemArea>
-                <TotalItemQty>3</TotalItemQty>
+                <TotalItemQty>{item.amount}</TotalItemQty>
                 <TotalItem>R$ 539,71</TotalItem>
               </TotalItemArea>
             </Item>
@@ -83,11 +51,17 @@ export default function cart({ navigation }) {
           <TotalCartValue>R$ 1619,10</TotalCartValue>
         </TotalCartArea>
         <ButtonArea>
-          <CloseOrderButton onPress={() => navigation.navigate('Home')}>
+          <CloseOrderButton onPress={() => {}}>
             <CloseOrderButtonText>Finalizar pedido</CloseOrderButtonText>
           </CloseOrderButton>
         </ButtonArea>
-      </Cart>
+      </CartProduct>
     </Container>
   );
 }
+
+const mapStateToProps = state => ({
+  cart: state.cart,
+});
+
+export default connect(mapStateToProps)(Cart);
