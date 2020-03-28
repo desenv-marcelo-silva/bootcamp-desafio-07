@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import { connect } from 'react-redux';
 
 import api from '../../services/api';
 
@@ -20,18 +21,25 @@ import {
   Price,
 } from './styles';
 
-export default class Home extends Component {
+class Home extends Component {
   state = { products: [] };
 
   async componentDidMount() {
     const response = await api.get('products');
-    console.tron.warn(response.data);
     this.setState({ products: response.data });
   }
 
+  handleAddCart = product => {
+    const { dispatch } = this.props;
+
+    dispatch({
+      type: '@cart/ADD_TO_CART',
+      product,
+    });
+  };
+
   render() {
     const { products } = this.state;
-    const { navigation } = this.props;
 
     return (
       <Container>
@@ -51,7 +59,7 @@ export default class Home extends Component {
                     <Icon name="add-shopping-cart" size={20} color="#FFF" />
                     <Quantity>3</Quantity>
                   </IconArea>
-                  <ButtonAddCart onPress={() => navigation.navigate('Cart')}>
+                  <ButtonAddCart onPress={() => this.handleAddCart(product)}>
                     <ButtonAddCartText>Adicionar ao carrinho</ButtonAddCartText>
                   </ButtonAddCart>
                 </AreaButton>
@@ -63,3 +71,5 @@ export default class Home extends Component {
     );
   }
 }
+
+export default connect()(Home);

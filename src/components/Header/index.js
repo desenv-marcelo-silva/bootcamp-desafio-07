@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import {
   Container,
@@ -8,14 +9,18 @@ import {
   LogoApp,
 } from './styles';
 
-export default function HeaderApp() {
+function HeaderApp({ totalItemCart }) {
   return (
     <Container>
       <LogoApp />
       <IconCartArea>
         <IconCart />
-        <QuantityCart>3</QuantityCart>
+        <QuantityCart>{totalItemCart}</QuantityCart>
       </IconCartArea>
     </Container>
   );
 }
+
+export default connect(state => ({
+  totalItemCart: state.cart.length,
+}))(HeaderApp);
