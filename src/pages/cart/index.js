@@ -18,8 +18,15 @@ import {
   ProductTitle,
   ProductValue,
   TotalItemArea,
-  TotalItemQty,
+  TotalItemQuantityArea,
+  TotalItemQuantity,
   TotalItem,
+  IconDelete,
+  ButtonDelete,
+  IconMinus,
+  ButtonMinus,
+  IconPlus,
+  ButtonPlus,
 } from './styles';
 
 function Cart({ cart, dispatch }) {
@@ -37,9 +44,26 @@ function Cart({ cart, dispatch }) {
                   <ProductTitle>{item.title}</ProductTitle>
                   <ProductValue>{item.price}</ProductValue>
                 </ProductArea>
+                <ButtonDelete
+                  onPress={() =>
+                    dispatch({
+                      type: '@cart/REMOVE_FROM_CART',
+                      id: item.id,
+                    })
+                  }>
+                  <IconDelete />
+                </ButtonDelete>
               </ProductInfo>
               <TotalItemArea>
-                <TotalItemQty>{item.amount}</TotalItemQty>
+                <TotalItemQuantityArea>
+                  <ButtonMinus onPress={() => {}}>
+                    <IconMinus />
+                  </ButtonMinus>
+                  <TotalItemQuantity>{item.amount}</TotalItemQuantity>
+                  <ButtonPlus onPress={() => {}}>
+                    <IconPlus />
+                  </ButtonPlus>
+                </TotalItemQuantityArea>
                 <TotalItem>R$ 539,71</TotalItem>
               </TotalItemArea>
             </Item>

@@ -1,5 +1,6 @@
 import styled from 'styled-components/native';
 import { RectButton } from 'react-native-gesture-handler';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 export const Container = styled.View`
   flex: 1;
@@ -30,8 +31,8 @@ export const ProductInfo = styled.View`
 `;
 
 export const ProductImage = styled.Image`
-  height: 100px;
-  width: 100px;
+  height: 80px;
+  width: 80px;
   align-self: center;
   background: #fff;
   margin-right: 8px;
@@ -44,7 +45,7 @@ export const ProductArea = styled.View`
 export const ProductTitle = styled.Text.attrs({
   numberOfLines: 2,
 })`
-  font-size: 15px;
+  font-size: 14px;
   color: #999;
 `;
 
@@ -61,21 +62,27 @@ export const TotalItemArea = styled.View`
   align-items: center;
   background: rgb(235, 255, 250);
   max-height: 40px;
-  padding: 20px;
 `;
 
-export const TotalItemQty = styled.Text`
+export const TotalItemQuantityArea = styled.View`
+  flex-direction: row;
+`;
+
+export const TotalItemQuantity = styled.Text`
   padding: 5px 15px;
   font-size: 12px;
   text-align: center;
   border: 1px solid #ccc;
   background: #fff;
+  margin: 0;
+  border-radius: 4px;
 `;
 
 export const TotalItem = styled.Text`
   font-size: 18px;
   font-weight: bold;
   color: #000;
+  margin-right: 5px;
 `;
 
 export const TotalCartArea = styled.View`
@@ -111,4 +118,46 @@ export const CloseOrderButtonText = styled.Text`
   padding: 5px;
   margin: 5px;
   text-align: center;
+`;
+
+export const IconDelete = styled(Icon).attrs({
+  name: 'delete-forever',
+  size: 30,
+  color: '#7159c1',
+})``;
+
+export const ButtonDelete = styled(RectButton)`
+  align-self: center;
+`;
+
+export const IconMinus = styled(Icon).attrs({
+  name: 'remove',
+  size: 20,
+  color: '#7159c1',
+})`
+  align-self: center;
+  text-align: center;
+  margin-right: 8px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+`;
+
+export const ButtonMinus = styled(RectButton)`
+  align-self: center;
+`;
+
+export const IconPlus = styled(Icon).attrs({
+  name: 'add',
+  size: 20,
+  color: '#7159c1',
+})`
+  align-self: center;
+  text-align: center;
+  margin-left: 8px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+`;
+
+export const ButtonPlus = styled(RectButton)`
+  align-self: center;
 `;
