@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 import {
   Container,
@@ -29,7 +30,9 @@ import {
   ButtonPlus,
 } from './styles';
 
-function Cart({ cart, dispatch }) {
+import * as CartActions from '../../store/modules/cart/actions';
+
+function Cart({ cart, removeFromCart }) {
   return (
     <Container>
       <CartProduct>
@@ -44,13 +47,7 @@ function Cart({ cart, dispatch }) {
                   <ProductTitle>{item.title}</ProductTitle>
                   <ProductValue>{item.price}</ProductValue>
                 </ProductArea>
-                <ButtonDelete
-                  onPress={() =>
-                    dispatch({
-                      type: '@cart/REMOVE_FROM_CART',
-                      id: item.id,
-                    })
-                  }>
+                <ButtonDelete onPress={() => removeFromCart(item.id)}>
                   <IconDelete />
                 </ButtonDelete>
               </ProductInfo>
@@ -88,4 +85,7 @@ const mapStateToProps = state => ({
   cart: state.cart,
 });
 
-export default connect(mapStateToProps)(Cart);
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(CartActions, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Cart);

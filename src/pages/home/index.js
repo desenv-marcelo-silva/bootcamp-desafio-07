@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 import api from '../../services/api';
+
+import * as CartActions from '../../store/modules/cart/actions';
 
 import {
   Container,
@@ -30,12 +34,10 @@ class Home extends Component {
   }
 
   handleAddCart = product => {
-    const { dispatch, navigation } = this.props;
+    const { addToCart, navigation } = this.props;
+    console.tron.log(this.props);
+    addToCart(product);
 
-    dispatch({
-      type: '@cart/ADD_TO_CART',
-      product,
-    });
     navigation.navigate('Cart');
   };
 
@@ -51,10 +53,12 @@ class Home extends Component {
                 <AreaPhoto>
                   <Image source={{ uri: product.image }} />
                 </AreaPhoto>
+
                 <AreaPriceTitle>
                   <Title>{product.title}</Title>
                   <Price>{product.price}</Price>
                 </AreaPriceTitle>
+
                 <AreaButton>
                   <IconArea>
                     <Icon name="add-shopping-cart" size={20} color="#FFF" />
@@ -73,4 +77,7 @@ class Home extends Component {
   }
 }
 
-export default connect()(Home);
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(CartActions, dispatch);
+
+export default connect(null, mapDispatchToProps)(Home);
