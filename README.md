@@ -60,4 +60,4 @@ Feito com ♥ by Marcelo Silva
 Motivado e inspirado by Rocketseat :wave: [Entre na nossa comunidade!](https://discordapp.com/invite/gCRAFhc)
 
 
-[app_running]: https://github.com/desenv-marcelo-silva/bootcamp-desafio-07/master/evidencia/final_result.gif "App running on emulator"
+[app_running]: https://github.com/desenv-marcelo-silva/bootcamp-desafio-07/blob/master/evidence/final_result.gif "App running on emulator"
