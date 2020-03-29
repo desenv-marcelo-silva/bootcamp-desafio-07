@@ -6,21 +6,33 @@ import {
   IconCartArea,
   IconCart,
   QuantityCart,
+  LogoArea,
   LogoApp,
 } from './styles';
 
-function HeaderApp({ totalItemCart }) {
+function HeaderApp({ navigation, totalItemCart }) {
   return (
     <Container>
-      <LogoApp />
-      <IconCartArea>
+      <LogoArea
+        onPress={() => {
+          navigation.navigate('Home');
+        }}>
+        <LogoApp />
+      </LogoArea>
+      <IconCartArea
+        onPress={() => {
+          navigation.navigate('Cart');
+        }}>
         <IconCart />
-        <QuantityCart>{totalItemCart}</QuantityCart>
+        <QuantityCart>{totalItemCart || 0}</QuantityCart>
       </IconCartArea>
     </Container>
   );
 }
 
-export default connect(state => ({
+const mapStateToProps = (state, ownProps) => ({
   totalItemCart: state.cart.length,
-}))(HeaderApp);
+  navigation: ownProps.navigation,
+});
+
+export default connect(mapStateToProps)(HeaderApp);

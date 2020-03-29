@@ -3,31 +3,20 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import Home from './pages/home';
 import Cart from './pages/cart';
+import Header from './components/Header';
 
 const Stack = createStackNavigator();
 
 export default function Routes() {
   return (
     <Stack.Navigator
-      headerBackTitleVisible={false}
-      headerLayoutPreset="center"
       screenOptions={{
-        headerStyle: {
-          backgroundColor: '#7159c1',
+        header: ({ navigation }) => {
+          return <Header navigation={navigation} />;
         },
-        headerTintColor: '#FFF',
-        headerAlign: 'center',
       }}>
-      <Stack.Screen
-        name="Home"
-        component={Home}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="Cart"
-        component={Cart}
-        options={{ headerShown: false }}
-      />
+      <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="Cart" component={Cart} />
     </Stack.Navigator>
   );
 }

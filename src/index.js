@@ -6,7 +6,6 @@ import { Provider } from 'react-redux';
 
 import './config/ReactotronConfig';
 
-import HeaderApp from './components/Header';
 import Routes from './Routes';
 
 import store from './store';
@@ -16,7 +15,6 @@ function App() {
     <NavigationContainer>
       <Provider store={store}>
         <StatusBar barStyle="light-content" backgroundColor="#7159c1" />
-        <HeaderApp />
         <Routes />
       </Provider>
     </NavigationContainer>

@@ -1,21 +1,21 @@
 import styled from 'styled-components/native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import { TouchableOpacity } from 'react-native';
 
 import logo from '../../assets/images/logo.png';
 
 export const Container = styled.View`
-  flex: 1;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 
-  max-height: 60px;
-  background: #000;
   padding: 20px;
+  background: #000;
 `;
 
-export const IconCartArea = styled.View`
+export const IconCartArea = styled(TouchableOpacity)`
   flex-direction: row;
+  width: 30px;
 `;
 
 export const QuantityCart = styled.Text`
@@ -36,6 +36,8 @@ export const IconCart = styled(Icon).attrs({
 })`
   color: #fff;
 `;
+
+export const LogoArea = styled(TouchableOpacity)``;
 
 export const LogoApp = styled.Image.attrs({
   resizeMode: 'cover',
