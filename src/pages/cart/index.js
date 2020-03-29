@@ -30,6 +30,9 @@ import {
   ButtonMinus,
   IconPlus,
   ButtonPlus,
+  ShowEmptyCartArea,
+  ShowEmptyCartText,
+  ShowEmptyCartIcon,
 } from './styles';
 
 import * as CartActions from '../../store/modules/cart/actions';
@@ -45,48 +48,54 @@ function Cart({ cart, total, removeFromCart, updateQuantityRequest }) {
 
   return (
     <Container>
-      <CartProduct>
-        <ItemArea
-          data={cart}
-          keyExtractor={item => String(item.id)}
-          renderItem={({ item }) => (
-            <Item>
-              <ProductInfo>
-                <ProductImage source={{ uri: item.image }} />
-                <ProductArea>
-                  <ProductTitle>{item.title}</ProductTitle>
-                  <ProductValue>{item.priceFormatted}</ProductValue>
-                </ProductArea>
-                <ButtonDelete onPress={() => removeFromCart(item.id)}>
-                  <IconDelete />
-                </ButtonDelete>
-              </ProductInfo>
-              <TotalItemArea>
-                <TotalItemQuantityArea>
-                  <ButtonMinus onPress={() => decrement(item)}>
-                    <IconMinus />
-                  </ButtonMinus>
-                  <TotalItemQuantity>{item.amount}</TotalItemQuantity>
-                  <ButtonPlus onPress={() => increment(item)}>
-                    <IconPlus />
-                  </ButtonPlus>
-                </TotalItemQuantityArea>
-                <TotalItem>{item.subtotal}</TotalItem>
-              </TotalItemArea>
-            </Item>
-          )}
-        />
-
-        <TotalCartArea>
-          <TotalCartText>Total</TotalCartText>
-          <TotalCartValue>{total}</TotalCartValue>
-        </TotalCartArea>
-        <ButtonArea>
-          <CloseOrderButton onPress={() => {}}>
-            <CloseOrderButtonText>Finalizar pedido</CloseOrderButtonText>
-          </CloseOrderButton>
-        </ButtonArea>
-      </CartProduct>
+      {cart && cart.length === 0 ? (
+        <ShowEmptyCartArea>
+          <ShowEmptyCartIcon />
+          <ShowEmptyCartText>Seu carrinho está vazio.</ShowEmptyCartText>
+        </ShowEmptyCartArea>
+      ) : (
+        <CartProduct>
+          <ItemArea
+            data={cart}
+            keyExtractor={item => String(item.id)}
+            renderItem={({ item }) => (
+              <Item>
+                <ProductInfo>
+                  <ProductImage source={{ uri: item.image }} />
+                  <ProductArea>
+                    <ProductTitle>{item.title}</ProductTitle>
+                    <ProductValue>{item.priceFormatted}</ProductValue>
+                  </ProductArea>
+                  <ButtonDelete onPress={() => removeFromCart(item.id)}>
+                    <IconDelete />
+                  </ButtonDelete>
+                </ProductInfo>
+                <TotalItemArea>
+                  <TotalItemQuantityArea>
+                    <ButtonMinus onPress={() => decrement(item)}>
+                      <IconMinus />
+                    </ButtonMinus>
+                    <TotalItemQuantity>{item.amount}</TotalItemQuantity>
+                    <ButtonPlus onPress={() => increment(item)}>
+                      <IconPlus />
+                    </ButtonPlus>
+                  </TotalItemQuantityArea>
+                  <TotalItem>{item.subtotal}</TotalItem>
+                </TotalItemArea>
+              </Item>
+            )}
+          />
+          <TotalCartArea>
+            <TotalCartText>Total</TotalCartText>
+            <TotalCartValue>{total}</TotalCartValue>
+          </TotalCartArea>
+          <ButtonArea>
+            <CloseOrderButton onPress={() => {}}>
+              <CloseOrderButtonText>Finalizar pedido</CloseOrderButtonText>
+            </CloseOrderButton>
+          </ButtonArea>
+        </CartProduct>
+      )}
     </Container>
   );
 }

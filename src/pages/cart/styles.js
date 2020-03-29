@@ -5,6 +5,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 export const Container = styled.View`
   flex: 1;
   background: #000;
+  padding: 20px;
 `;
 
 export const CartProduct = styled.View`
@@ -16,7 +17,7 @@ export const CartProduct = styled.View`
 export const ItemArea = styled.FlatList.attrs({
   showsVerticalScrollIndicator: false,
 })`
-  flex: 4;
+  flex: 1;
   margin-top: 20px;
 `;
 
@@ -79,22 +80,23 @@ export const TotalItemQuantity = styled.Text`
 `;
 
 export const TotalItem = styled.Text`
+  color: #000;
+
   font-size: 18px;
   font-weight: bold;
-  color: #000;
   margin-right: 5px;
 `;
 
 export const TotalCartArea = styled.View`
-  flex: 1;
   align-items: center;
   text-align: center;
 `;
 
 export const TotalCartText = styled.Text`
+  color: #d3d3d3;
+
   font-size: 20px;
   text-transform: uppercase;
-  color: #d3d3d3;
 `;
 
 export const TotalCartValue = styled.Text`
@@ -103,7 +105,6 @@ export const TotalCartValue = styled.Text`
 `;
 
 export const ButtonArea = styled.View`
-  flex: 0.5;
   margin: 20px;
 `;
 
@@ -160,4 +161,24 @@ export const IconPlus = styled(Icon).attrs({
 
 export const ButtonPlus = styled(RectButton)`
   align-self: center;
+`;
+
+export const ShowEmptyCartArea = styled.View`
+  flex: 0.8;
+  justify-content: space-evenly;
+  align-items: center;
+  background: #fff;
+  border-radius: 5px;
+`;
+
+export const ShowEmptyCartIcon = styled(Icon).attrs({
+  size: 80,
+  name: 'remove-shopping-cart',
+})`
+  opacity: 0.5;
+`;
+
+export const ShowEmptyCartText = styled.Text`
+  font-size: 30px;
+  text-align: center;
 `;
