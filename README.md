@@ -32,7 +32,7 @@ Nesse desafio você migrará o projeto de e-commerce criado na web para disposit
 
 ### Um pouco sobre as ferramentas
 
-Utilize ESLint, Prettier, EditorConfig, React Navigation e todas outras ferramentas que vimos até aqui no mundo do React Native.
+Utilize ESLint, Prettier, EditorConfig, React Navigation, Reactotron, redux, redux-saga e todas outras ferramentas que vimos até aqui no mundo do React Native.
 
 ### Layout
 
@@ -40,11 +40,12 @@ O layout do projeto está em anexo com esse desafio. O arquivo `.sketch` (no dir
 
 ### Resultado:
 
-<img src="https://github.com/Rocketseat/bootcamp-gostack-desafio-07/blob/master/.github/demo.gif" height="400">
+![App running][app_running]
+
 
 ## 📅 Desafio resolvido
 
-O [código do desafio aqui](https://github.com/Rocketseat/bootcamp-gostack-desafio-07). 
+O [código do desafio aqui](https://github.com/Rocketseat/bootcamp-gostack-desafio-07).
 
 ## :memo: Licença
 
@@ -52,4 +53,11 @@ Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para
 
 ---
 
-Feito com ♥ by Rocketseat :wave: [Entre na nossa comunidade!](https://discordapp.com/invite/gCRAFhc)
+Feito com ♥ by Marcelo Silva
+
+## Quer ver esse App funcionando na sua máquina?
+
+Motivado e inspirado by Rocketseat :wave: [Entre na nossa comunidade!](https://discordapp.com/invite/gCRAFhc)
+
+
+[app_running]: https://github.com/desenv-marcelo-silva/bootcamp-desafio-07/master/evidencia/final_result.gif "App running on emulator"
