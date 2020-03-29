@@ -17,6 +17,7 @@ export const ProductList = styled.ScrollView.attrs({
 })`
   margin-top: 20px;
   flex: 0.9;
+  color: #fff;
 `;
 
 export const Product = styled.View`
