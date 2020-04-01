@@ -55,8 +55,6 @@ Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para
 
 Feito com ♥ by Marcelo Silva
 
-## Quer ver esse App funcionando na sua máquina?
-
 Motivado e inspirado by Rocketseat :wave: [Entre na nossa comunidade!](https://discordapp.com/invite/gCRAFhc)
 
 
